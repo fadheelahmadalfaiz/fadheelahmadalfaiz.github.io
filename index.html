@@ -1,95 +1,20 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <meta name="description" content="Fadheel Ahmad Alfaiz — tautan aplikasi &amp; proyek." />
-  <meta name="theme-color" content="#030712" />
-  <meta property="og:title" content="Fadheel Ahmad Alfaiz" />
-  <meta property="og:description" content="Link hub &amp; unduhan aplikasi." />
-  <meta property="og:type" content="website" />
-  <title>Fadheel Ahmad Alfaiz</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/assets/magic.css" />
-</head>
-<body>
-  <div class="bg-stage" aria-hidden="true"></div>
-  <div class="dot-pattern" aria-hidden="true"></div>
-  <div class="meteors" id="meteors" aria-hidden="true"></div>
-
-  <main class="page">
-    <header class="profile blur-fade" data-delay="1">
-      <div class="avatar-ring">
-        <img
-          class="avatar"
-          src="https://avatars.githubusercontent.com/u/147017460?v=4"
-          width="108"
-          height="108"
-          alt="Foto profil Fadheel Ahmad Alfaiz"
-        />
-      </div>
-      <h1 class="name gradient-text">Fadheel Ahmad Alfaiz</h1>
-      <p class="shiny-text">Builder · apps, tools &amp; side projects</p>
-      <div class="socials">
-        <a class="chip" href="https://github.com/fadheelahmadalfaiz" target="_blank" rel="noopener noreferrer">
-          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.342-3.369-1.342-.454-1.155-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.161 22 16.416 22 12c0-5.523-4.477-10-10-10z"/></svg>
-          GitHub
-        </a>
-        <a class="chip" href="https://izz.my.id" target="_blank" rel="noopener noreferrer">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-          izz.my.id
-        </a>
-      </div>
-    </header>
-
-    <section class="section blur-fade" data-delay="2" aria-labelledby="apps-label">
-      <h2 id="apps-label" class="section-label">Apps</h2>
-      <div class="links">
-        <a class="magic-card" href="/apps/faizherbals/">
-          <div class="icon-box" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M12 22c-4-3.5-7-6.8-7-11a7 7 0 0 1 14 0c0 4.2-3 7.5-7 11z" />
-              <path d="M12 11v6" />
-              <path d="M9.5 14.5c1.2-1.8 2.5-2.5 2.5-2.5s1.3.7 2.5 2.5" />
-            </svg>
-          </div>
-          <div class="link-text">
-            <div class="link-title">Faiz Herbals</div>
-            <div class="link-desc">Download APK terbaru (Android)</div>
-            <span class="badge"><span class="dot" aria-hidden="true"></span> Latest build</span>
-          </div>
-          <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="m9 18 6-6-6-6" />
-          </svg>
-        </a>
-      </div>
-    </section>
-
-    <footer class="site-foot blur-fade" data-delay="3">
-      Built with
-      <a href="https://magicui.design" target="_blank" rel="noopener noreferrer">Magic UI</a>
-      aesthetics ·
-      <a href="https://github.com/fadheelahmadalfaiz/fadheelahmadalfaiz.github.io" target="_blank" rel="noopener noreferrer">source</a>
-    </footer>
-  </main>
-
-  <script>
-    (function () {
-      const root = document.getElementById("meteors");
-      if (!root || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-      const count = 8;
-      for (let i = 0; i < count; i++) {
-        const m = document.createElement("span");
-        m.className = "meteor";
-        m.style.top = Math.random() * 40 + "%";
-        m.style.left = Math.random() * 100 + "%";
-        m.style.animationDelay = (Math.random() * 6) + "s";
-        m.style.animationDuration = (2.5 + Math.random() * 2.5) + "s";
-        root.appendChild(m);
-      }
-    })();
-  </script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="description" content="Fadheel Ahmad Alfaiz — tautan aplikasi &amp; proyek." />
+    <meta name="theme-color" content="#0b1020" />
+    <meta property="og:title" content="Fadheel Ahmad Alfaiz" />
+    <meta property="og:description" content="Link hub &amp; unduhan aplikasi." />
+    <meta property="og:type" content="website" />
+    <title>Fadheel Ahmad Alfaiz</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
 </html>

@@ -1,25 +1,38 @@
 # fadheelahmadalfaiz.github.io
 
-Personal link hub + app download pages (Linktree-style).
+Personal link hub + app download pages.
 
-UI/UX inspired by [Magic UI](https://magicui.design) (dot pattern, meteors, shine border, shimmer button, blur fade, gradient/shiny text) as static CSS — no React build required for GitHub Pages.
+Stack: **Vite + React + TypeScript + Tailwind CSS + shadcn/ui (Radix primitives)**.
 
-## Live URLs
+## Live
 
 | Path | Page |
 | --- | --- |
 | `/` | Profile + app list |
 | `/apps/faizherbals/` | Faiz Herbals APK download |
 
+## Develop
+
+```bash
+npm install
+npm run dev
+```
+
+## Build
+
+```bash
+npm run build
+npm run preview
+```
+
 ## Architecture
 
-- **UI hub**: this repo (GitHub Pages user site)
-- **APK source**: [fadheelahmadalfaiz/faizherbals-build](https://github.com/fadheelahmadalfaiz/faizherbals-build) Releases
-
-Download pages fetch `GET /repos/{owner}/{repo}/releases/latest` in the browser.
+- UI: this repo (GitHub Pages user site)
+- APK source of truth: [fadheelahmadalfaiz/faizherbals-build](https://github.com/fadheelahmadalfaiz/faizherbals-build) Releases
+- Logo asset: `public/logo-faizherbals.jpg` (copied from private app repo assets)
 
 ## Add another app
 
-1. Create `apps/<slug>/index.html` (copy from `apps/faizherbals/`)
-2. Change `REPO` constant + branding copy
-3. Add a card in root `index.html` → `href="/apps/<slug>/"`
+1. Put logo in `public/`
+2. Append entry in `src/data/apps.ts`
+3. Route `/apps/:slug/` is already handled by `AppDownloadPage`

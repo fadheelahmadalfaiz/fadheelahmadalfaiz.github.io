@@ -15,37 +15,38 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  build:
+    name: Build site
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
   deploy:
-    name: Deploy link hub
+    name: Deploy
+    needs: build
     runs-on: ubuntu-latest
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - name: Checkout
-        uses: actions/checkout@v5
-
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
-        with:
-          enablement: true
-
-      - name: Prepare publish root
-        run: |
-          set -euo pipefail
-          mkdir -p publish
-          # Keep only site assets (exclude .git / workflow internals)
-          rsync -a \
-            --exclude '.git' \
-            --exclude '.github' \
-            --exclude 'publish' \
-            ./ publish/
-
-      - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: publish
-
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4

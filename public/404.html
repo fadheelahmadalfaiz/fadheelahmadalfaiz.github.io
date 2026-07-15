@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Redirecting…</title>
+    <script>
+      // SPA fallback for GitHub Pages deep links (e.g. /apps/faizherbals/)
+      sessionStorage.setItem("ghpages:spa-redirect", location.pathname + location.search + location.hash);
+      location.replace("/");
+    </script>
+  </head>
+  <body>
+    <p>Redirecting…</p>
+  </body>
+</html>
