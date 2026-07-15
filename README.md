@@ -2,6 +2,8 @@
 
 Personal link hub + app download pages (Linktree-style).
 
+UI/UX inspired by [Magic UI](https://magicui.design) (dot pattern, meteors, shine border, shimmer button, blur fade, gradient/shiny text) as static CSS — no React build required for GitHub Pages.
+
 ## Live URLs
 
 | Path | Page |
