@@ -1,6 +1,7 @@
-import { ExternalLink, Globe } from "lucide-react"
+import { ChevronRight, ExternalLink, Globe } from "lucide-react"
 import { Link } from "react-router-dom"
 
+import { AppLogo } from "@/components/app-logo"
 import { Avatar, AvatarImage } from "@/components/ui/avatar"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
@@ -12,7 +13,8 @@ import {
 } from "@/components/ui/card"
 import { Separator } from "@/components/ui/separator"
 import { SiteShell } from "@/components/site-shell"
-import { apps } from "@/data/apps"
+import { apps, catalogGeneratedAt, catalogOwner } from "@/data/apps"
+import { formatDateId } from "@/lib/utils"
 
 export function HomePage() {
   return (
@@ -33,7 +35,7 @@ export function HomePage() {
         <div className="mt-4 flex flex-wrap items-center justify-center gap-2">
           <Button variant="outline" size="sm" asChild>
             <a
-              href="https://github.com/fadheelahmadalfaiz"
+              href={`https://github.com/${catalogOwner}`}
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -57,39 +59,68 @@ export function HomePage() {
           <h2 className="text-[0.7rem] font-bold uppercase tracking-[0.14em] text-muted-foreground">
             Apps
           </h2>
+          <span className="text-xs tabular-nums text-muted-foreground">
+            {apps.length}
+          </span>
           <Separator className="flex-1" />
         </div>
 
-        <div className="grid gap-3">
-          {apps.map((app) => (
-            <Link key={app.slug} to={`/apps/${app.slug}/`} className="group block">
-              <Card className="transition-colors hover:bg-accent/40">
-                <CardHeader className="flex flex-row items-center gap-3 space-y-0 p-4">
-                  <img
-                    src={app.logo}
-                    alt=""
-                    width={48}
-                    height={48}
-                    className="h-12 w-12 shrink-0 rounded-xl border border-border object-cover"
-                  />
-                  <div className="min-w-0 flex-1 text-left">
-                    <CardTitle className="text-base">{app.name}</CardTitle>
-                    <CardDescription className="mt-0.5 truncate">
-                      {app.description}
-                    </CardDescription>
-                    {app.badge ? (
-                      <Badge variant="success" className="mt-2 gap-1.5">
-                        <span className="size-1.5 rounded-full bg-emerald-400" />
-                        {app.badge}
-                      </Badge>
-                    ) : null}
-                  </div>
-                  <ExternalLink className="size-4 shrink-0 text-muted-foreground transition-transform group-hover:translate-x-0.5 group-hover:text-foreground" />
-                </CardHeader>
-              </Card>
-            </Link>
-          ))}
-        </div>
+        {apps.length ? (
+          <div className="grid gap-3">
+            {apps.map((app) => (
+              <Link
+                key={app.slug}
+                to={`/apps/${app.slug}/`}
+                className="group block rounded-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+              >
+                <Card className="transition-colors hover:bg-accent/40">
+                  <CardHeader className="flex flex-row items-center gap-3 space-y-0 p-4">
+                    <AppLogo
+                      name={app.name}
+                      logo={app.logo}
+                      className="h-12 w-12 shrink-0"
+                    />
+                    <div className="min-w-0 flex-1 text-left">
+                      <CardTitle className="truncate text-base">{app.name}</CardTitle>
+                      <CardDescription className="mt-0.5 line-clamp-2">
+                        {app.description}
+                      </CardDescription>
+                      <div className="mt-2 flex flex-wrap items-center gap-1.5">
+                        {app.stack ? (
+                          <Badge variant="secondary">{app.stack}</Badge>
+                        ) : null}
+                        {app.release ? (
+                          <Badge variant="success" className="gap-1.5">
+                            <span className="size-1.5 rounded-full bg-emerald-400" />
+                            {app.release.tag}
+                          </Badge>
+                        ) : (
+                          <Badge variant="outline">Belum ada build</Badge>
+                        )}
+                      </div>
+                    </div>
+                    <ChevronRight className="size-4 shrink-0 text-muted-foreground transition-transform group-hover:translate-x-0.5 group-hover:text-foreground motion-reduce:transform-none motion-reduce:transition-none" />
+                  </CardHeader>
+                </Card>
+              </Link>
+            ))}
+          </div>
+        ) : (
+          <Card>
+            <CardHeader>
+              <CardTitle className="text-base">Belum ada app</CardTitle>
+              <CardDescription>
+                Katalog akan terisi otomatis setelah ada repo publik dengan release
+                APK/AAB.
+              </CardDescription>
+            </CardHeader>
+          </Card>
+        )}
+
+        <p className="mt-4 text-center text-[0.7rem] text-muted-foreground">
+          Disinkronkan otomatis dari GitHub Releases ·{" "}
+          <time dateTime={catalogGeneratedAt}>{formatDateId(catalogGeneratedAt)}</time>
+        </p>
       </section>
 
       <footer className="mt-8 text-center text-xs text-muted-foreground">
@@ -110,6 +141,16 @@ export function HomePage() {
           rel="noopener noreferrer"
         >
           Radix
+        </a>
+        <span className="mx-1.5 text-border">·</span>
+        <a
+          className="inline-flex items-center gap-1 underline underline-offset-2"
+          href="https://github.com/fadheelahmadalfaiz/fadheelahmadalfaiz.github.io"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Source
+          <ExternalLink className="size-3" aria-hidden="true" />
         </a>
       </footer>
     </SiteShell>

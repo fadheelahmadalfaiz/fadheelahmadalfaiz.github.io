@@ -1,0 +1,18 @@
+{
+  "fadheelahmadalfaiz/faizherbals-build": {
+    "slug": "faizherbals",
+    "name": "Faiz Herbals",
+    "description": "Download APK terbaru (Android)",
+    "logo": "/logo-faizherbals.jpg",
+    "stack": "Flutter"
+  },
+  "fadheelahmadalfaiz/chroniq-app": {
+    "slug": "chroniq",
+    "name": "Chroniq",
+    "description": "Alarm presisi per tanggal dengan penjadwalan multi-tanggal, ringing full-screen di lock screen, dan sinkron Google Calendar."
+  },
+  "fadheelahmadalfaiz/substracker-app": {
+    "slug": "substracker",
+    "name": "SubsTracker"
+  }
+}

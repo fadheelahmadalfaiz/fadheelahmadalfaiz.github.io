@@ -1,0 +1,47 @@
+name: Release app
+
+on:
+  push:
+    branches: [main]
+    paths-ignore:
+      - "**/*.md"
+      - "docs/**"
+      - ".github/**"
+  workflow_dispatch:
+    inputs:
+      platform:
+        description: "Platform override"
+        type: choice
+        required: false
+        default: auto
+        options:
+          - auto
+          - flutter
+          - android
+          - react-native
+          - expo
+      build_type:
+        description: "Build type"
+        type: choice
+        required: false
+        default: release
+        options:
+          - release
+          - debug
+
+permissions:
+  contents: write
+
+concurrency:
+  group: app-release-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  release:
+    uses: fadheelahmadalfaiz/fadheelahmadalfaiz.github.io/.github/workflows/build-app.yml@main
+    permissions:
+      contents: write
+    with:
+      platform: ${{ inputs.platform || 'auto' }}
+      build_type: ${{ inputs.build_type || 'release' }}
+    secrets: inherit

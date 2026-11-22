@@ -1,0 +1,112 @@
+{
+  "generatedAt": "2026-11-22T04:34:02.118Z",
+  "owner": "fadheelahmadalfaiz",
+  "topic": "faiz-app",
+  "apps": [
+    {
+      "slug": "chroniq",
+      "name": "Chroniq",
+      "description": "Alarm presisi per tanggal dengan penjadwalan multi-tanggal, ringing full-screen di lock screen, dan sinkron Google Calendar.",
+      "logo": "https://raw.githubusercontent.com/fadheelahmadalfaiz/chroniq-app/main/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png",
+      "repo": "fadheelahmadalfaiz/chroniq-app",
+      "homepage": null,
+      "stack": "Android",
+      "platforms": [
+        "android"
+      ],
+      "release": {
+        "tag": "latest",
+        "name": "Chroniq latest build",
+        "publishedAt": "2026-11-22T04:00:19Z",
+        "url": "https://github.com/fadheelahmadalfaiz/chroniq-app/releases/tag/latest",
+        "assets": [
+          {
+            "name": "Chroniq-latest.apk",
+            "size": 15313759,
+            "url": "https://github.com/fadheelahmadalfaiz/chroniq-app/releases/download/latest/Chroniq-latest.apk",
+            "kind": "apk"
+          }
+        ]
+      },
+      "primaryAsset": {
+        "name": "Chroniq-latest.apk",
+        "size": 15313759,
+        "url": "https://github.com/fadheelahmadalfaiz/chroniq-app/releases/download/latest/Chroniq-latest.apk",
+        "kind": "apk"
+      },
+      "updatedAt": "2026-11-22T04:00:19Z"
+    },
+    {
+      "slug": "faizherbals",
+      "name": "Faiz Herbals",
+      "description": "Download APK terbaru (Android)",
+      "logo": "/logo-faizherbals.jpg",
+      "repo": "fadheelahmadalfaiz/faizherbals-build",
+      "homepage": null,
+      "stack": "Flutter",
+      "platforms": [
+        "android"
+      ],
+      "release": {
+        "tag": "build-2",
+        "name": "Android build",
+        "publishedAt": "2026-07-15T13:54:08Z",
+        "url": "https://github.com/fadheelahmadalfaiz/faizherbals-build/releases/tag/build-2",
+        "assets": [
+          {
+            "name": "faizherbals-main-9d0e7eb.aab",
+            "size": 51619752,
+            "url": "https://github.com/fadheelahmadalfaiz/faizherbals-build/releases/download/build-2/faizherbals-main-9d0e7eb.aab",
+            "kind": "aab"
+          },
+          {
+            "name": "faizherbals-main-9d0e7eb.apk",
+            "size": 71327692,
+            "url": "https://github.com/fadheelahmadalfaiz/faizherbals-build/releases/download/build-2/faizherbals-main-9d0e7eb.apk",
+            "kind": "apk"
+          }
+        ]
+      },
+      "primaryAsset": {
+        "name": "faizherbals-main-9d0e7eb.apk",
+        "size": 71327692,
+        "url": "https://github.com/fadheelahmadalfaiz/faizherbals-build/releases/download/build-2/faizherbals-main-9d0e7eb.apk",
+        "kind": "apk"
+      },
+      "updatedAt": "2026-07-15T13:54:08Z"
+    },
+    {
+      "slug": "substracker",
+      "name": "SubsTracker",
+      "description": "Aplikasi Flutter dari repo substracker-app.",
+      "logo": "https://raw.githubusercontent.com/fadheelahmadalfaiz/substracker-app/main/assets/icon/app_icon.png",
+      "repo": "fadheelahmadalfaiz/substracker-app",
+      "homepage": null,
+      "stack": "Flutter",
+      "platforms": [
+        "android"
+      ],
+      "release": {
+        "tag": "v1.0.5",
+        "name": "SubsTracker v1.0.5",
+        "publishedAt": "2026-01-26T16:05:09Z",
+        "url": "https://github.com/fadheelahmadalfaiz/substracker-app/releases/tag/v1.0.5",
+        "assets": [
+          {
+            "name": "SubsTracker-v1.0.5.apk",
+            "size": 26037164,
+            "url": "https://github.com/fadheelahmadalfaiz/substracker-app/releases/download/v1.0.5/SubsTracker-v1.0.5.apk",
+            "kind": "apk"
+          }
+        ]
+      },
+      "primaryAsset": {
+        "name": "SubsTracker-v1.0.5.apk",
+        "size": 26037164,
+        "url": "https://github.com/fadheelahmadalfaiz/substracker-app/releases/download/v1.0.5/SubsTracker-v1.0.5.apk",
+        "kind": "apk"
+      },
+      "updatedAt": "2026-01-26T16:05:09Z"
+    }
+  ]
+}
