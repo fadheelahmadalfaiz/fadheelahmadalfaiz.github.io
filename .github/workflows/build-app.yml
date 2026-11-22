@@ -162,7 +162,7 @@ jobs:
 
       - name: Set up Node
         if: steps.detect.outputs.platform == 'react-native' || steps.detect.outputs.platform == 'expo'
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v7
         with:
           node-version: ${{ inputs.node_version }}
 
@@ -343,7 +343,7 @@ jobs:
           ls -lh "$RUNNER_TEMP/app-artifacts"
 
       - name: Upload app artifacts
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: ${{ steps.collect.outputs.artifact_name }}
           path: ${{ runner.temp }}/app-artifacts/*
@@ -361,7 +361,7 @@ jobs:
       tag: ${{ steps.tag.outputs.tag }}
     steps:
       - name: Download artifacts
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v8
         with:
           name: ${{ needs.build.outputs.artifact_name }}
           path: release-artifact
@@ -372,7 +372,7 @@ jobs:
         run: echo "tag=${{ inputs.tag_prefix }}-${{ github.run_number }}" >> "$GITHUB_OUTPUT"
 
       - name: Create GitHub release
-        uses: softprops/action-gh-release@v2
+        uses: softprops/action-gh-release@v3
         with:
           tag_name: ${{ steps.tag.outputs.tag }}
           name: "${{ github.repository }} build #${{ github.run_number }}"
